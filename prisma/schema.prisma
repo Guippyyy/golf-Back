@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Location {
+    id     Int     @id @default(autoincrement())
+    name   String
+    image  String
+    colours String
+    courses  Course[]
+}
+
+model Course {
+    id     Int     @id @default(autoincrement())
+    name   String
+    location   Location  @relation(fields: [locationID], references: [id])
+    locationID Int
+    holes Hole[]
+}
+
+model Hole {
+    id     Int     @id @default(autoincrement())
+    distances String
+    course Course @relation(fields: [courseID], references: [id])
+    courseID Int
+    number Int
+    par Int
+    hcp Int
+}
+
+model Score {
+  id Int @id @default(autoincrement())
+  coursID Int
+  scores String
+  result Int
+  createdAt        DateTime           @default(now())
+}

@@ -4,7 +4,7 @@
 
 - Student: Guillaume De Craene
 - Studentennummer: 202185375
-- E-mailadres: voornaam.naam@student.hogent.be
+- E-mailadres: guillaume.decraene@student.hogent.be
 
 ## Vereisten
 
@@ -20,7 +20,7 @@ Ik verwacht dat volgende software reeds geïnstalleerd is:
 ## Opstarten
 
 > Schrijf hier hoe we de applicatie starten (.env bestanden aanmaken, commando's om uit te voeren...)
-
+> ->npm start
 
 ## Testen
 

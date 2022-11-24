@@ -1,0 +1,23 @@
+// {
+//   "env": {
+//     "es6": true,
+//     "es2021": true,
+//     "node": true,
+//     "jest": true
+//   },
+//   "parserOptions": {
+//     "ecmqVersion": 12,
+//     "sourceType": "module"
+//   },
+//   "extends": "eslint:recommended",
+//   "plugin": ["import"],
+//   "rules": {
+//     "import/order": [
+//       "error",
+//       {
+//         "newlines-between": "always",
+//         "groups": ["builtin"]
+//       }
+//     ]
+//   }
+// }

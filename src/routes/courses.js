@@ -7,9 +7,9 @@ router.get('/', async function (req, res, next) {
     const prisma = new PrismaClient();
     const golfCourses = await prisma.location.findMany({
         include: {
-            courses: {
+            course: {
                 include: {
-                    holes: true
+                    hole: true
                 }
             }    
         }

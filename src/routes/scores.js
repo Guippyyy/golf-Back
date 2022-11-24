@@ -18,7 +18,11 @@ router.post('/', async function(req, res){
 })
 
 router.get('/', async function(req,res){
-    // const users = await prisma.score.deleteMany()
+    // const score = await prisma.score.deleteMany({
+    //     where: {
+    //        scores: null,
+    //     }
+    // })
     const score = await prisma.score.findMany()
 
     res.json(score)

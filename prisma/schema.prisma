@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,36 +7,40 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Location {
-    id     Int     @id @default(autoincrement())
-    name   String
-    image  String
-    colours String
-    courses  Course[]
+model course {
+  id         Int      @id @default(autoincrement())
+  name       String
+  locationID Int
+  location   location @relation(fields: [locationID], references: [id], map: "Course_locationID_fkey")
+  hole       hole[]
+
+  @@index([locationID], map: "Course_locationID_fkey")
 }
 
-model Course {
-    id     Int     @id @default(autoincrement())
-    name   String
-    location   Location  @relation(fields: [locationID], references: [id])
-    locationID Int
-    holes Hole[]
+model hole {
+  id        Int    @id @default(autoincrement())
+  courseID  Int
+  number    Int
+  par       Int
+  hcp       Int
+  distances String
+  course    course @relation(fields: [courseID], references: [id], map: "Hole_courseID_fkey")
+
+  @@index([courseID], map: "Hole_courseID_fkey")
 }
 
-model Hole {
-    id     Int     @id @default(autoincrement())
-    distances String
-    course Course @relation(fields: [courseID], references: [id])
-    courseID Int
-    number Int
-    par Int
-    hcp Int
+model location {
+  id      Int      @id @default(autoincrement())
+  name    String
+  image   String
+  colours String
+  course  course[]
 }
 
-model Score {
-  id Int @id @default(autoincrement())
-  coursID Int
-  scores String
-  result Int
-  createdAt        DateTime           @default(now())
+model score {
+  id        Int      @id @default(autoincrement())
+  coursID   Int
+  scores    String
+  result    Int
+  createdAt DateTime @default(now())
 }

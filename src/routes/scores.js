@@ -1,8 +1,7 @@
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient()
 var express = require('express');
 var router = express.Router();
 
+const prisma = require("../../config/generateClient")
 
 router.post('/', async function(req, res){
     const {coursID, scores, result} = req.body;

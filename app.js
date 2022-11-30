@@ -1,15 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const app = express();
 
-var indexRouter = require('./src/routes/index');
-var usersRouter = require('./src/routes/users');
-var coursesRouter = require('./src/routes/courses');
-var scoresRouter = require('./src/routes/scores');
-var cors = require('cors');
-var app = express();
+
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const createError = require('http-errors');
+const cors = require('cors');
+
+// var indexRouter = require('./src/index');
+const usersRouter = require('./src/routes/users');
+const coursesRouter = require('./src/routes/courses');
+const scoresRouter = require('./src/routes/scores');
+
+
 
 app.use(cors({
   origin: 'http://localhost:3000'
@@ -22,7 +25,7 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 
-app.use('/api', indexRouter);
+// app.use('/api', indexRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/courses", coursesRouter);
 app.use("/api/scores", scoresRouter);

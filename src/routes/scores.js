@@ -1,29 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const  addScore = require('../services/scores');
+const getScore = require('../services/scores');
+const deleteScore = require('../services/scores');
 
-const prisma = require("../../config/generateClient")
+router.post('/', addScore)
 
-router.post('/', async function(req, res){
-    const {coursID, scores, result} = req.body;
+router.get('/', getScore);
 
-    const score = await prisma.score.create({
-        data : {
-            coursID: coursID,
-            scores: scores,
-            result: result
-        }
-    })
-    res.json(score)
-})
+router.delete('/', deleteScore);
 
-router.get('/', async function(req,res){
-    // const score = await prisma.score.deleteMany({
-    //     where: {
-    //        scores: null,
-    //     }
-    // })
-    const score = await prisma.score.findMany()
-
-    res.json(score)
-});
 module.exports = router;

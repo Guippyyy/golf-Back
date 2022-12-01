@@ -1,5 +1,10 @@
 const prisma = require("../../prisma/generateClient");
 
+async function getScore(req, res, next) {	
+    const score = await prisma.score.findMany()
+    res.json(score)
+}
+
 async function addScore(req, res){
     const {coursID, scores, result} = req.body; // hier zit het probleem
 
@@ -14,10 +19,7 @@ async function addScore(req, res){
 }
 
 
-async function getScore(req, res, next) {	
-    const score = await prisma.score.findMany()
-    res.json(score)
-}
+
 
 async function deleteScore(req, res, next) {
     const score = await prisma.score.deleteMany()
@@ -26,4 +28,4 @@ async function deleteScore(req, res, next) {
 
 
 
-module.exports = addScore, getScore, deleteScore;
+module.exports = getScore, deleteScore, addScore;

@@ -5,19 +5,6 @@ async function getScore(req, res, next) {
     res.json(score)
 }
 
-async function addScore(req, res){
-    const {coursID, scores, result} = req.body; // hier zit het probleem
-
-    const score = await prisma.score.create({
-        data : {
-            coursID: coursID,
-            scores: scores,
-            result: result
-        }
-    })
-    res.json(score)
-}
-
 
 
 
@@ -28,4 +15,4 @@ async function deleteScore(req, res, next) {
 
 
 
-module.exports = getScore, deleteScore, addScore;
+module.exports = getScore, deleteScore;

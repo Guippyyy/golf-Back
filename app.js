@@ -8,7 +8,7 @@ const createError = require('http-errors');
 const cors = require('cors');
 
 // var indexRouter = require('./src/index');
-const usersRouter = require('./src/routes/users');
+const usersRouter = require('./src/routes/locations');
 const coursesRouter = require('./src/routes/courses');
 const scoresRouter = require('./src/routes/scores');
 

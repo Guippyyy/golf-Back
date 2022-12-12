@@ -2,8 +2,14 @@ const prisma = require("../../prisma/generateClient");
 const { validationResult} = require('express-validator')
 
 async function getScore(req, res, next) {	
-
-    const score = await prisma.score.findMany()
+    const userId = req.auth.payload.sub
+    const score = await prisma.score.findMany({
+        where : {
+            userID : {
+                equals : userId
+            }
+        }
+    })
     res.json(score)
 }
 

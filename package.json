@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "start:prod": "node ./bin/www src/app.js"
+    "start:prod": "npx env-cmd nodemon src/app.js"
   },
   "dependencies": {
     "@prisma/client": "^4.5.0",

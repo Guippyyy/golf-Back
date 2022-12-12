@@ -10,4 +10,4 @@ async function deleteLocations(req, res, next) {
   res.json(loc)
 }; 
 
-module.exports = getLocations, deleteLocations;
+module.exports = { getLocations, deleteLocations }

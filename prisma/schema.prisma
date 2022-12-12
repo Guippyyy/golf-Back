@@ -43,4 +43,5 @@ model score {
   scores    String
   result    Int
   createdAt DateTime @default(now())
+  userID String
 }

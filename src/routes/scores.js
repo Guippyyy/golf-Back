@@ -1,38 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const prisma = require("../../prisma/generateClient");
-// const  addScore = require('../services/scores');
-const getScore = require('../services/scores');
-const deleteScore = require('../services/scores');
+const { addScore, getScore, deleteScore } = require('../services/scores');
 const {check, validationResult} = require('express-validator')
+const { auth, requiredScopes } = require('express-oauth2-jwt-bearer');
+const checkJwt = auth({
+    audience: 'https://golfApp.guillaume.hogent.be',
+    issuerBaseURL: `https://dev-8cpbbh21w2gsf8yo.us.auth0.com/`,
+  });
 
 router.post('/', [
+    checkJwt,
     check('coursID').notEmpty(),
     check('scores').notEmpty(),
     check('result').notEmpty()
-],async function addScore(req, res){
+], addScore);
 
-    const errors = validationResult(req)
-  
-    if(!errors.isEmpty()){
-        return res.status(400).json({errors: errors.array()})
-    }
-    const {coursID, scores, result} = req.body; // hier zit het probleem
-
-    const score = await prisma.score.create({
-        data : {
-        coursID: coursID,
-            scores: scores,
-            result: result
-        }
-    })
-    res.json(score)
-}
-
-);
-
-router.get('/', getScore);
-
+router.get('/', checkJwt, getScore);
 router.delete('/', deleteScore);
 
 module.exports = router;

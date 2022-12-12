@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const jwt = require('jsonwebtoken');
+app.use(express.json()); 
+
 
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -8,7 +11,8 @@ const createError = require('http-errors');
 const cors = require('cors');
 
 // var indexRouter = require('./src/index');
-const usersRouter = require('./src/routes/locations');
+const usersRouter = require('./src/routes/users');
+const locationsRouter = require('./src/routes/locations');
 const coursesRouter = require('./src/routes/courses');
 const scoresRouter = require('./src/routes/scores');
 
@@ -26,7 +30,8 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 
 // app.use('/api', indexRouter);
-app.use("/api/users", usersRouter);
+// app.use("/api/users", usersRouter);
+app.use("/api/locations", locationsRouter);
 app.use("/api/courses", coursesRouter);
 app.use("/api/scores", scoresRouter);
 

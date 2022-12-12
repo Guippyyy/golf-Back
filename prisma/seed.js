@@ -1,11 +1,11 @@
 
 const prisma = require('./generateClient')
-const links = require('../data/links')
+const users = require('../data/links')
 
 
 async function main(){
-    await prisma.links.createMany({
-        data : links
+    await prisma.user.createMany({
+        data : users
     })
 } 
 

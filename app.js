@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 const jwt = require('jsonwebtoken');
 app.use(express.json()); 
 
@@ -19,7 +20,7 @@ const scoresRouter = require('./src/routes/scores');
 
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: process.env.CORS_ORIGIN
 }));
 
 app.use(logger('dev'));

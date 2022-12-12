@@ -1,5 +1,6 @@
 const prisma = require("../../prisma/generateClient");
 async function getCourses (req, res, next) {
+    console.log('got here');
     const golfCourses = await prisma.location.findMany({
         include: {
             course: {

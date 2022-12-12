@@ -1,11 +1,11 @@
-const express = require('express');
-const server = express()
+var http = require('http');
+var app = require('../app');
+var port = process.env.PORT || 3001;
+app.set('port', port);
 
-server.use((req, res) => {
-    res.send('hello world')
+var server = http.createServer(app);
+
+// Start listing to the port
+server.listen(port, () => {
+    console.log('listening on port ' + port)
 })
-
-const PORT = process.env.PORT || 3001
-server.listen(PORT), () => {
-    console.log('listening on port ' + PORT)
-}

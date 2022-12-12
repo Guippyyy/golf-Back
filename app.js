@@ -30,6 +30,10 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 
+app.get('/', function(req, res) {
+  console.log('this is a happty test')
+  res.json({ 'does it work?': true })
+});
 // app.use('/api', indexRouter);
 // app.use("/api/users", usersRouter);
 app.use("/api/locations", locationsRouter);

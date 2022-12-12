@@ -4,7 +4,9 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  // When you are working locally, you should use:
+  // url = env('DATABASE_URL')
+  url      = "mysql://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?connection_limit=5&socket_timeout=3"
 }
 
 model course {

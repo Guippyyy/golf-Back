@@ -20,7 +20,7 @@ console.log(`CORS_ORIGIN ${cors_origin}`)
 
 app.use(cors({
   preflightContinue: true,
-  origin: cors_origin
+  origin: true
 }));
 app.use(logger('dev'));
 app.use(express.json());

@@ -17,10 +17,11 @@ const scoresRouter = require('./src/routes/scores');
 
 const cors_origin = process.env.CORS_ORIGIN || "http://localhost:3000"
 console.log(`CORS_ORIGIN ${cors_origin}`)
+
 app.use(cors({
+  preflightContinue: true,
   origin: cors_origin
 }));
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({

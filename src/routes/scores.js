@@ -15,7 +15,7 @@ router.post('/', [
     check('result').notEmpty()
 ], addScore);
 
-router.get('/', getScore);
+router.get('/', checkJwt, getScore);
 router.delete('/', deleteScore);
 
 module.exports = router;

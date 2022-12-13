@@ -1,8 +1,5 @@
 const express = require('express');
 const app = express();
-
-
-const jwt = require('jsonwebtoken');
 app.use(express.json()); 
 
 
@@ -18,9 +15,10 @@ const coursesRouter = require('./src/routes/courses');
 const scoresRouter = require('./src/routes/scores');
 
 
-
+const cors_origin = process.env.CORS_ORIGIN || "http://localhost:3000"
+console.log(`CORS_ORIGIN ${cors_origin}`)
 app.use(cors({
-  origin: process.env.CORS_ORIGIN
+  origin: cors_origin
 }));
 
 app.use(logger('dev'));
@@ -30,8 +28,7 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 
-app.get('/', function(req, res) {
-  console.log('this is a happty test')
+app.get('/profile', function(req, res) {
   res.json({ 'does it work?': true })
 });
 // app.use('/api', indexRouter);

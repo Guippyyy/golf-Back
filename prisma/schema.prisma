@@ -4,9 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  // When you are working locally, you should use:
-  // url = env('DATABASE_URL')
-  url      = ""
+  url = "" //env("DATABASE_URL")
 }
 
 model course {

@@ -1,13 +1,26 @@
+const { validationResult } = require("express-validator");
 const prisma = require("../../prisma/generateClient");
 
 async function getLocations(req, res, next) {
   const loc = await prisma.location.findMany();
-  res.json(loc)
-};
+  res.json(loc);
+}
 
-async function deleteLocations(req, res, next) {
-  const loc = await prisma.location.deleteMany();
-  res.json(loc)
-}; 
+async function postLocations(req, res, next) {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
 
-module.exports = { getLocations, deleteLocations }
+  const loc = await prisma.location.create({
+    data: {
+      id: locationID,
+      name: locationName,
+      image: locationImage,
+      colours: locationColours,
+    },
+  });
+  res.json(loc)
+}
+
+module.exports = { getLocations, postLocations };

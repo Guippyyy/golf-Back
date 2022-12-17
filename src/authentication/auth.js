@@ -10,7 +10,7 @@ const checkJwt = auth({
 });
 
 // This route doesn't need authentication
-app.get('/api/public', function(req, res) {
+app.get('/api/', function(req, res) {
   res.json({
     message: 'Hello from a public endpoint! You don\'t need to be authenticated to see this.'
   });

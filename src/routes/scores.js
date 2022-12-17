@@ -10,9 +10,9 @@ const checkJwt = auth({
 
 router.post('/', [
     checkJwt,
-    check('coursID').notEmpty(),
-    check('scores').notEmpty(),
-    check('result').notEmpty()
+    check('coursID').not().isEmpty(),
+    check('scores', "scores is required").not().isEmpty(),
+    check('result').not().isEmpty()
 ], addScore);
 
 router.get('/', checkJwt, getScore);

@@ -60,7 +60,7 @@
         <br />
 
 - **varia**
-  - [ ] een aantal niet-triviale testen (unit en/of e2e en/of ui)
+  - [x] een aantal niet-triviale testen (unit en/of e2e en/of ui)
   - [x] minstens één extra technologie
   - [ ] duidelijke en volledige README.md
   - [ ] volledig en tijdig ingediend dossier
@@ -98,9 +98,9 @@
 
 - **varia**
   - [ ] een aantal niet-triviale testen (min. 1 controller >=80% coverage)
-  - [ ] minstens één extra technologie
+  - [x] minstens één extra technologie
   - [ ] duidelijke en volledige `README.md`
-  - [ ] maakt gebruik van de laatste ES6-features (object destructuring, spread operator...)
+  - [x] maakt gebruik van de laatste ES6-features (object destructuring, spread operator...)
   - [ ] volledig en tijdig ingediend dossier
 
 ## Projectstructuur

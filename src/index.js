@@ -1,12 +1,11 @@
-var http = require('http');
-var app = require('../app');
+const createServer = require("./createServer");
 
-var port = process.env.PORT || 3001;
-app.set('port', port);
-
-var server = http.createServer(app);
-
-// Start listing to the port
-server.listen(port, () => {
-    console.log('listening on port ' + port)
-})
+async function main() {
+    try {
+        const server = await createServer();
+        await server.start();
+    } catch (error) {
+        console.error(error);
+    }
+}
+main();

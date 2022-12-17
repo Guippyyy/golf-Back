@@ -32,7 +32,8 @@ async function addScore(req, res){
             userID: userId
         }
     })
-    res.json(score)
+
+    res.status(200).json(score)
 }
 
 

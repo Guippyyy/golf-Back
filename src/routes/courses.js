@@ -1,7 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-const  getCourses  = require('../services/courses');
+const{ getCourses, getCoursesNoHoles } = require('../services/courses');
+
 router.get('/', getCourses);
+router.get('/ ', getCoursesNoHoles);
 
 module.exports = router;

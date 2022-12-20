@@ -52,4 +52,22 @@ describe("scoresTest", () => {
       ],
     });
   });
+
+  it("should get all scores", async () => {
+    const { body, statusCode } = await requestApi.get("/api/scores").set("Authorization", authHeader);
+
+    expect(body).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: expect.any(Number),
+          coursID: expect.any(Number),
+          scores: expect.any(String),
+          result: expect.any(Number),
+          createdAt: expect.any(String),
+          userID: expect.any(String),
+        }),
+      ])
+    );
+    expect(statusCode).toBe(200);
+  });
 });

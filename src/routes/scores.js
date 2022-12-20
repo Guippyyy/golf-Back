@@ -10,7 +10,7 @@ const checkJwt = auth({
 
 router.post('/', [
     checkJwt,
-    check('coursID').not().isEmpty(),
+    check('coursID', "coursID is required").not().isEmpty(),
     check('scores', "scores is required").not().isEmpty(),
     check('result').not().isEmpty()
 ], addScore);

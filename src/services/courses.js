@@ -18,4 +18,13 @@ async function getCourses (req, res, next) {
     
 }
 
-module.exports = getCourses
+async function getCoursesNoHoles(req, res){
+    try {
+        const golfCourses = await prisma.course.findMany()
+        res.json(golfCourses)
+    } catch (error) {
+        res.json({ "ERROR": error.message });
+    }
+}
+
+module.exports = { getCourses, getCoursesNoHoles }

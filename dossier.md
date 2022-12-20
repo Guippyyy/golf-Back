@@ -4,26 +4,34 @@
 > Verwijder alle instructies (lijnen die starten met >)
 
 - [ ] Front-end Web Development
-  - [GitHub repository](github.com/HOGENT-Web)
-  - [Online versie](github.com/HOGENT-Web)
+  - [GitHub repository](https://github.com/Web-IV/2223-frontendweb-Guippyyy)
+  - [Online versie](https://two223-frontendweb-guippyyy.onrender.com/)
 - [ ] Web Services: GITHUB URL
-  - [GitHub repository](github.com/HOGENT-Web)
-  - [Online versie](github.com/HOGENT-Web)
+  - [GitHub repository](https://github.com/Web-IV/2223-webservices-Guippyyy)
+  - [Online versie](https://two223-webservices-guippyyy.onrender.com)
 
 **Logingegevens**
 
-- Gebruikersnaam/e-mailadres: root
+- Gebruikersnaam/e-mailadres: e2e-testing
 - Wachtwoord: 12345abcdE
-
-> Vul eventueel aan met extra accounts voor administrators of andere rollen.
 
 ## Projectbeschrijving
 
-> Omschrijf hier duidelijk waarover jouw project gaat. Voeg een domeinmodel (of EERD) toe om jouw entiteiten te verduidelijken.
+> Het is een platfrom waar je je scores kunt bij houden, en je kunt de scores herbekijken.
+> ![](/images/mermaid-0.png)
 
 ## Screenshots
 
-> Voeg enkele (nuttige!) screenshots toe die tonen wat de app doet.
+> 1-9 holes zichtbaar
+> ![](/images/Screenshot_20221220_064204.png)
+> 1-18 holes zichtbaar
+> ![](c/images/Screenshot_20221220_064256.png)
+> geef 7 & 6 in en click submit
+> ![](images/Screenshot_20221220_064337.png)
+> score is +6
+> ![](/images/Screenshot_20221220_064407.png)
+> score zichtbaar in history
+> ![](Screenshot_20221220_064434.png)
 
 ## Behaalde minimumvereisten
 
@@ -48,7 +56,7 @@
 - **state-management**
 
   - [x] meerdere API calls (naast login/register)
-  - [ ] degelijke foutmeldingen indien API call faalt
+  - [x] degelijke foutmeldingen indien API call faalt
   - [x] gebruikt useState enkel voor lokale state
   - [ ] gebruikt Context, useReducer, Redux… voor globale state
         <br />
@@ -62,15 +70,15 @@
 - **varia**
   - [x] een aantal niet-triviale testen (unit en/of e2e en/of ui)
   - [x] minstens één extra technologie
-  - [ ] duidelijke en volledige README.md
-  - [ ] volledig en tijdig ingediend dossier
+  - [] duidelijke en volledige README.md
+  - [x] volledig en tijdig ingediend dossier
 
 ### Web Services
 
 - **datalaag**
 
   - [x] voldoende complex (meer dan één tabel)
-  - [ ] één module beheert de connectie + connectie wordt gesloten bij sluiten server
+  - [x] één module beheert de connectie + connectie wordt gesloten bij sluiten server
   - [x] heeft migraties
   - [ ] heeft seeds
         <br />
@@ -83,7 +91,7 @@
 
 - **servicelaag met een zekere complexiteit**
 
-  - [ ] bevat alle domeinlogica
+  - [x] bevat alle domeinlogica
   - [x] bevat geen SQL-queries of databank-gerelateerde code
         <br />
 
@@ -91,17 +99,17 @@
 
   - [x] meerdere routes met invoervalidatie
   - [x] degelijke foutboodschappen
-  - [x] volgt de conventies van een RESTful API
+  - [ ] volgt de conventies van een RESTful API
   - [ ] bevat geen domeinlogica
   - [x] degelijke authorisatie/authenticatie op alle routes
         <br />
 
 - **varia**
-  - [ ] een aantal niet-triviale testen (min. 1 controller >=80% coverage)
+  - [x] een aantal niet-triviale testen (min. 1 controller >=80% coverage)
   - [x] minstens één extra technologie
   - [ ] duidelijke en volledige `README.md`
   - [x] maakt gebruik van de laatste ES6-features (object destructuring, spread operator...)
-  - [ ] volledig en tijdig ingediend dossier
+  - [x] volledig en tijdig ingediend dossier
 
 ## Projectstructuur
 
@@ -119,9 +127,13 @@
 
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
+- chart JS / https://www.npmjs.com/package/chart.js?activeTab=readme
+
 ### Web Services
 
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
+
+- prisma / https://www.npmjs.com/package/prisma
 
 ## Testresultaten
 
@@ -129,19 +141,32 @@
 
 > Schrijf hier een korte oplijsting en beschrijving van de geschreven testen
 
+- kijken of de applicatie draait
+- login en check of ik naar /profile kan gaan
+- login -> naar / play (forms) -> click submit -> ga na of form validatie werkt
+
 ### Web Services
 
 > Schrijf hier een korte oplijsting en beschrijving van de geschreven testen + voeg een screenshot van de coverage en uitvoering toe
+
+- post een score en verwacht ~ succes
+- post een score en verwacht ~ scores is required
+- get all scores
+- get all locations
+
+![](/images/test.png)
 
 ## Gekende bugs
 
 ### Front-end Web Development
 
 > Zijn er gekende bugs?
+> neen
 
 ### Web Services
 
 > Zijn er gekende bugs?
+> neen
 
 ## Wat is er verbeterd/aangepast?
 

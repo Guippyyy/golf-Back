@@ -31,7 +31,7 @@ const withServer = (setter) => {
     try {
       server = await createServer();
       const token = await fetchAccessToken();
-      console.log(token);
+
 
       setter({
         request: supertest(server.getApp()),

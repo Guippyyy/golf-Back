@@ -1,8 +1,5 @@
 # Guillaume De Craene (202185375)
 
-> Duid aan welke vakken je volgt en vermeld voor deze vakken de link naar jouw GitHub repository. In het geval je slechts één vak volgt, verwijder alle inhoud omtrent het andere vak.
-> Verwijder alle instructies (lijnen die starten met >)
-
 - [ ] Front-end Web Development
   - [GitHub repository](https://github.com/Web-IV/2223-frontendweb-Guippyyy)
   - [Online versie](https://two223-frontendweb-guippyyy.onrender.com/)
@@ -17,7 +14,7 @@
 
 ## Projectbeschrijving
 
-> Het is een platfrom waar je je scores kunt bij houden, en je kunt de scores herbekijken.
+> Het is een platfrom waar je jouw scores kunt bij houden, en je kunt de scores herbekijken.
 > ![](/images/mermaid-0.png)
 
 ## Screenshots
@@ -34,8 +31,6 @@
 > ![](Screenshot_20221220_064434.png)
 
 ## Behaalde minimumvereisten
-
-> Duid per vak aan welke minimumvereisten je denkt behaald te hebben
 
 ### Front-end Web Development
 
@@ -115,15 +110,11 @@
 
 ### Front-end Web Development
 
-> Hoe heb je jouw applicatie gestructureerd (mappen, design patterns, hiërarchie van componenten, state...)?
-
 - page heeft navbar & props.children
 - scoreCard -> table -> scorerow
 - history -> historyFields -> collapsible -> table -> scorerow
 
 ### Web Services
-
-> Hoe heb je jouw applicatie gestructureerd (mappen, design patterns...)?
 
 > geen design pattern gebruikt
 
@@ -131,14 +122,10 @@
 
 ### Front-end Web Development
 
-> Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
-
 - een library die ervoor zorgt dat je verschillende grafieken kan genereren.
 - chart JS / https://www.npmjs.com/package/chart.js?activeTab=readme
 
 ### Web Services
-
-> Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
 - prisma bestaat uit; the prisma scheme, the prisma data model, the prisma client
   en zorgt ervoor dat je makkelijk een databank kan creeren.
@@ -148,15 +135,11 @@
 
 ### Front-end Web Development
 
-> Schrijf hier een korte oplijsting en beschrijving van de geschreven testen
-
 - kijken of de applicatie draait
 - login en check of ik naar /profile kan gaan
 - login -> naar / play (forms) -> click submit -> ga na of form validatie werkt
 
 ### Web Services
-
-> Schrijf hier een korte oplijsting en beschrijving van de geschreven testen + voeg een screenshot van de coverage en uitvoering toe
 
 - post een score en verwacht ~ succes
 - post een score en verwacht ~ scores is required
@@ -169,22 +152,8 @@
 
 ### Front-end Web Development
 
-> Zijn er gekende bugs?
 > neen
 
 ### Web Services
 
-> Zijn er gekende bugs?
 > neen
-
-## Wat is er verbeterd/aangepast?
-
-> Deze sectie is enkel voor 2e zittijd, verwijder deze in 1e zittijd.
-
-### Front-end Web Development
-
-- Dit en dat
-
-### Web Services
-
-- Oh en dit ook

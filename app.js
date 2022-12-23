@@ -7,6 +7,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const createError = require('http-errors');
 const cors = require('cors');
+const dotenv = require('dotenv');
+dotenv.config()
+const config = require("config");
 
 // var indexRouter = require('./src/index');
 const locationsRouter = require('./src/routes/locations');
@@ -14,6 +17,8 @@ const coursesRouter = require('./src/routes/courses');
 const scoresRouter = require('./src/routes/scores');
 
 const cors_origin = process.env.CORS_ORIGIN || "http://localhost:3000"
+
+
 
 app.use(cors({
   preflightContinue: true,

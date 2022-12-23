@@ -9,7 +9,7 @@ const createError = require('http-errors');
 const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config()
-const config = require("config");
+
 
 // var indexRouter = require('./src/index');
 const locationsRouter = require('./src/routes/locations');
@@ -22,7 +22,7 @@ const cors_origin = process.env.CORS_ORIGIN || "http://localhost:3000"
 
 app.use(cors({
   preflightContinue: true,
-  origin: true
+  origins: [cors_origin]
 }));
 app.use(logger('dev'));
 app.use(express.json());

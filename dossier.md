@@ -12,7 +12,7 @@
 
 **Logingegevens**
 
-- Gebruikersnaam/e-mailadres: e2e-testing
+- Gebruikersnaam/e-mailadres: tester
 - Wachtwoord: 12345abcdE
 
 ## Projectbeschrijving
@@ -70,7 +70,7 @@
 - **varia**
   - [x] een aantal niet-triviale testen (unit en/of e2e en/of ui)
   - [x] minstens één extra technologie
-  - [] duidelijke en volledige README.md
+  - [x] duidelijke en volledige README.md
   - [x] volledig en tijdig ingediend dossier
 
 ### Web Services
@@ -85,8 +85,8 @@
 
 - **repositorylaag**
 
-  - [ ] definieert één repository per entiteit (niet voor tussentabellen) - indien van toepassing
-  - [ ] mapt OO-rijke data naar relationele tabellen en vice versa
+  - [x] definieert één repository per entiteit (niet voor tussentabellen) - indien van toepassing
+  - [x] mapt OO-rijke data naar relationele tabellen en vice versa
         <br />
 
 - **servicelaag met een zekere complexiteit**
@@ -99,15 +99,15 @@
 
   - [x] meerdere routes met invoervalidatie
   - [x] degelijke foutboodschappen
-  - [ ] volgt de conventies van een RESTful API
-  - [ ] bevat geen domeinlogica
+  - [x] volgt de conventies van een RESTful API
+  - [x] bevat geen domeinlogica
   - [x] degelijke authorisatie/authenticatie op alle routes
         <br />
 
 - **varia**
   - [x] een aantal niet-triviale testen (min. 1 controller >=80% coverage)
   - [x] minstens één extra technologie
-  - [ ] duidelijke en volledige `README.md`
+  - [x] duidelijke en volledige `README.md`
   - [x] maakt gebruik van de laatste ES6-features (object destructuring, spread operator...)
   - [x] volledig en tijdig ingediend dossier
 
@@ -117,9 +117,15 @@
 
 > Hoe heb je jouw applicatie gestructureerd (mappen, design patterns, hiërarchie van componenten, state...)?
 
+- page heeft navbar & props.children
+- scoreCard -> table -> scorerow
+- history -> historyFields -> collapsible -> table -> scorerow
+
 ### Web Services
 
 > Hoe heb je jouw applicatie gestructureerd (mappen, design patterns...)?
+
+> geen design pattern gebruikt
 
 ## Extra technologie
 
@@ -127,12 +133,15 @@
 
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
+- een library die ervoor zorgt dat je verschillende grafieken kan genereren.
 - chart JS / https://www.npmjs.com/package/chart.js?activeTab=readme
 
 ### Web Services
 
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
+- prisma bestaat uit; the prisma scheme, the prisma data model, the prisma client
+  en zorgt ervoor dat je makkelijk een databank kan creeren.
 - prisma / https://www.npmjs.com/package/prisma
 
 ## Testresultaten

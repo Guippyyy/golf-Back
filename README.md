@@ -19,21 +19,38 @@ Ik verwacht dat volgende software reeds geïnstalleerd is:
 
 ## Opstarten
 
-> Schrijf hier hoe we de applicatie starten (.env bestanden aanmaken, commando's om uit te voeren...)
-> ->npm start
+> maak een .env.development bestand aan in de src folder
+> plaats er het volgende in:
 
-## Testen
+> `NODE_ENV=development`
 
-> maak een .env.test bestand in de src folder,
-> plaats het volgende er in:
-> `AUTH_TEST_USER_USER_ID=auth0|6391b763e4e2c1af3fd1264b
-AUTH_TEST_USER_USERNAME=tester
-AUTH_TEST_USER_PASSWORD=12345abcdE
-AUTH_TOKEN_URL=https://dev-8cpbbh21w2gsf8yo.us.auth0.com/oauth/token
-AUTH_CLIENT_ID=vJiNOBCQEuCRNoFU7I4tO9ORIBm6l5Eb
-AUTH_CLIENT_SECRET=nhmDy5NuKcKGs_Cdn4c_P6y9uy_CviitxrEokJXuJqoHeFHXK47j_0Bf7JF0poRN
-AUTH_AUDIENCE=https://golfApp.guillaume.hogent.be`
+> `DATABASE_HOST={hostname}`  
+> `DATABASE_PORT={port}`  
+> `DATABASE_USERNAME={username}`  
+> `DATABASE_PASSWORD={password}`  
+> `DATABASE_NAME={name}`
 
 voer dan het commando uit:
 
-`yarn test:coverage`
+> `yarn start`
+
+## Testen
+
+maak een .env.test bestand in de src folder,
+plaats het volgende er in:
+
+> `NODE_ENV=test`
+
+> `AUTH_TEST_USER_USER_ID={auth userId}`  
+> `AUTH_TEST_USER_USERNAME={userName}`  
+> `AUTH_TEST_USER_PASSWORD={password}`  
+> `AUTH_TOKEN_URL={url token}`  
+> `AUTH_CLIENT_ID={clientId}`  
+> `AUTH_CLIENT_SECRET={secret}`  
+> `AUTH_AUDIENCE={audience}`
+
+> `DATABASE_HOST={hostname}` > `DATABASE_PORT={port}` > `DATABASE_USERNAME={username}` > `DATABASE_PASSWORD={password}` > `DATABASE_NAME={name}`
+
+voer dan het commando uit:
+
+> `yarn test:coverage`

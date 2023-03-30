@@ -3,7 +3,7 @@
 > Schrap hierboven wat niet past
 
 - Student: Guillaume De Craene
-- Studentennummer: 202185375
+- Studentennummer: 
 - E-mailadres: guillaume.decraene@student.hogent.be
 
 ## Vereisten
